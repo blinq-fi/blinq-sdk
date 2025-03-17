@@ -1,6 +1,8 @@
 import 'dotenv/config'
-import { AggregatorClient } from "../src/";
-import type { XploreRequest, ChainToken } from "../src/types";
+import {
+  AggregatorClient,
+} from "blinq-sdk";
+import type { XploreRequest, ChainToken } from "blinq-sdk";
 
 const request: XploreRequest = {
   inputToken: {

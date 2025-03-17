@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require("dotenv/config");
-const client_1 = require("../src/client");
+const blinq_sdk_1 = require("blinq-sdk");
 const request = {
     inputToken: {
         chainId: "8453",
@@ -30,7 +30,7 @@ const request = {
     timeoutMs: 10000
 };
 const RPC_SERVER = process.env.RPC_SERVER || "localhost:50051";
-const client = new client_1.AggregatorClient({
+const client = new blinq_sdk_1.AggregatorClient({
     endpoint: RPC_SERVER,
     timeoutS: 10
 });

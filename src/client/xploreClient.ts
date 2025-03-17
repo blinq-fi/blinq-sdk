@@ -26,11 +26,8 @@ export class AggregatorClient {
 
   // Unified method for handling gRPC call patterns
   private async callService<T, U>(method: any, request: T): Promise<U> {
-    debugger;
     return new Promise((resolve, reject) => {
-      debugger;
       method.call(this.client, request, (err: any, res: U) => {
-        debugger;
         if (err) reject(this.normalizeError(err));
         else resolve(res);
       });
@@ -39,9 +36,7 @@ export class AggregatorClient {
 
   // Public API Methods
   async aggregateCall(req: XploreRequest): Promise<XploreResponse> {
-    debugger;
     this.validateXploreRequest(req);
-    debugger;
     return this.callService<XploreRequest, XploreResponse>(
       this.client.aggregateCall,
       req
@@ -77,7 +72,6 @@ export class AggregatorClient {
   }
 
   private getChannelOptions(config: AggregatorClientConfig): ChannelOptions {
-    debugger;
     return {
       "grpc.max_receive_message_length": -1,
       "grpc.initial_reconnect_backoff_ms": 1000,
