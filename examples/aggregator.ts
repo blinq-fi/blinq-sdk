@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import { AggregatorClient } from "../src/client/xploreClient";
+import { AggregatorClient } from "../src/";
 import type { XploreRequest, ChainToken } from "../src/types";
 
 const request: XploreRequest = {
