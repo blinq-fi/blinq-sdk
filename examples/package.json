@@ -14,7 +14,6 @@
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "@routerprotocol/router-chain-sdk-ts": "0.8.70-beta-0.2",
     "blinq-sdk": "file:/Users/msk/blinq-sdk-0.1.2.tgz",
     "dotenv": "^16.4.7"
   }
