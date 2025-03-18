@@ -4,17 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "aggregator": "tsx aggregator.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   },
   "dependencies": {
-    "blinq-sdk": "file:/Users/msk/blinq-sdk-0.1.2.tgz",
+    "blinq-sdk": "file:~/blinq-sdk-0.1.2.tgz",
     "dotenv": "^16.4.7"
   }
 }

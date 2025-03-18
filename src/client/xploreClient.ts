@@ -19,7 +19,7 @@ export class AggregatorClient {
   constructor(config: AggregatorClientConfig) {
     this.client = new GeneratedClient(
       config.endpoint,
-      credentials.createInsecure(), // Use insecure if needed
+      credentials.createInsecure(), // TODO: investigate ssl secure creds (Use insecure if needed)
       this.getChannelOptions(config)
     );
   }
@@ -58,11 +58,13 @@ export class AggregatorClient {
     if (!req.inputToken?.chainId || !req.outputToken?.chainId) {
       throw new Error("Invalid chain tokens in request");
     }
-    // Add more validation as needed
+    // TODO: Add more validation as needed
   }
 
   // Enhanced Error Handling
   private normalizeError(err: any): Error {
+    // TODO: normalize gRPC errors
+    console.error(`GRPC_ERROR[${err.code}]: ${err.details}`);
     return new Error(
       `GRPC_ERROR[${err.code}]: ${err.details}, ${JSON.stringify(err)}`);
   }

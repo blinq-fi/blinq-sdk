@@ -1,8 +1,8 @@
 import 'dotenv/config'
 import {
   AggregatorClient,
+  type XploreRequest
 } from "blinq-sdk";
-import type { XploreRequest, ChainToken } from "blinq-sdk";
 
 const request: XploreRequest = {
   inputToken: {
@@ -30,13 +30,25 @@ const client = new AggregatorClient({
   timeoutS: 10
 });
 
-(async () => {
+const aggregateCall = async () => {
   try {
     const route = await client.aggregateCall(request);
     console.log("Best route:", JSON.stringify(route));
-  } catch (err) {
-    console.error("Failed to get route:", err);
-  } finally {
-    client.close();
+  } catch (error) {
+    console.error("Failed to get route:", error);
   }
+}
+
+const getTransactionRecord = async () => {
+  try {
+    const rec = await client.getTransactionRecord("TX_HASH");
+    console.log("txn rec:", JSON.stringify(rec));
+  } catch (error) {
+    console.error("Failed to get transaction rec ", error);
+  }
+}
+
+(async () => {
+  await aggregateCall();
+  await getTransactionRecord();
 })();
